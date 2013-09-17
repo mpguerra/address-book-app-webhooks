@@ -25,5 +25,8 @@ module AddressBookAppDevise
     #config.eager_load_paths += ["#{Rails.root}/lib}"]
     #config.force_ssl = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    # Allow application to be displayed from google oauth playground
+    config.action_dispatch.default_headers[:'X-Frame-Options'] = "ALLOW-FROM https://developers.google.com/oauthplayground"
   end
 end
