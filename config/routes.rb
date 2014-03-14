@@ -1,5 +1,5 @@
 AddressBookAppDevise::Application.routes.draw do
-  mount_opro_oauth
+  mount_opro_oauth :controllers => { :oauth_auth => 'oauth/auth' }
   devise_for :users
   root :to => "home#index"
   resources :users
